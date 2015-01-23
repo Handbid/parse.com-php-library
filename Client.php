@@ -14,7 +14,7 @@ class Client {
 	public $returnData = '';
 
 	public function __construct($config=[]){
-		$parseConfig = new parseConfig;
+        
 		$this->_appid = isset($config['appid'])?$config['appid']:null;
     	$this->_masterkey = isset($config['masterkey'])?$config['masterkey']:null;
     	$this->_restkey = isset($config['restkey'])?$config['restkey']:null;
@@ -194,7 +194,7 @@ class Client {
 }
 
 
-class ParseLibraryException extends Exception{
+class ParseLibraryException extends \Exception{
 	public function __construct($message, $code = 0, Exception $previous = null) {
 		//codes are only set by a parse.com error
 		if($code != 0){
