@@ -15,12 +15,12 @@ class Push extends Client{
 
 	private $_globalMsg;
 
-	public function __construct($globalMsg=''){
-		if($globalMsg != ''){
-			$this->_globalMsg = $globalMsg;
+	public function __construct($config=[]){//($globalMsg=''){
+		if(isset($config['globalMsg'])){
+			$this->_globalMsg = $config['globalMsg'];
 		}
 		
-		parent::__construct();
+		parent::__construct($config);
 
 	}
 	

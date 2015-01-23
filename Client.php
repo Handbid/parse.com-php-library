@@ -107,11 +107,12 @@ class Client {
 
 		//BELOW HELPS WITH DEBUGGING		
 		/*
-		if(!in_array($responseCode,$expectedCode)){
-			//print_r($response);
-			//print_r($args);		
-		}
 		*/
+		if(!in_array($responseCode,$expectedCode)){
+			print_r($response);
+			print_r($args);	
+            print_r(curl_getinfo($c));
+		}
 		return $this->checkResponse($response,$responseCode,$expectedCode);
 	}
 
