@@ -1,15 +1,8 @@
 <?php
-include 'parseConfig.php';
-include 'parseObject.php';
-include 'parseQuery.php';
-include 'parseUser.php';
-include 'parseFile.php';
-include 'parsePush.php';
-include 'parseGeoPoint.php';
-include 'parseACL.php';
-include 'parseCloud.php';
 
-class parseRestClient{
+namespace Parse;
+
+class Client {
 
 	private $_appid = '';
 	private $_masterkey = '';
@@ -20,12 +13,12 @@ class parseRestClient{
 	public $requestUrl = '';
 	public $returnData = '';
 
-	public function __construct(){
+	public function __construct($config=[]){
 		$parseConfig = new parseConfig;
-		$this->_appid = $parseConfig::APPID;
-    	$this->_masterkey = $parseConfig::MASTERKEY;
-    	$this->_restkey = $parseConfig::RESTKEY;
-    	$this->_parseurl = $parseConfig::PARSEURL;
+		$this->_appid = isset($config['appid'])?$config['appid']:null;
+    	$this->_masterkey = isset($config['masterkey'])?$config['masterkey']:null;
+    	$this->_restkey = isset($config['restkey'])?$config['restkey']:null;
+    	$this->_parseurl = isset($config['parseurl'])?$config['parseurl']:null;
 
 		if(empty($this->_appid) || empty($this->_restkey) || empty($this->_masterkey)){
 			$this->throwError('You must set your Application ID, Master Key and REST API Key');
@@ -217,4 +210,3 @@ class ParseLibraryException extends Exception{
 
 }
 
-?>

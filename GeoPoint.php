@@ -1,6 +1,8 @@
 <?php
 
-class parseGeoPoint extends parseRestClient{
+namespace Parse;
+
+class GeoPoint extends Client{
 
 	public $lat;
 	public $long;
@@ -23,5 +25,3 @@ class parseGeoPoint extends parseRestClient{
 	}	
 
 }
-
-?>

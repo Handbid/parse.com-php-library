@@ -1,6 +1,8 @@
 <?php
 
-class parseUser extends parseRestClient{
+namespace Parse;
+
+class User extends Client{
 
 	public $authData;
 
@@ -183,5 +185,3 @@ public function socialLogin(){
 
 	
 }
-
-?>

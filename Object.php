@@ -1,6 +1,8 @@
 <?php
 
-class parseObject extends parseRestClient{
+namespace Parse;
+
+class Object extends Client{
 	public $_includes = array();
 	private $_className = '';
 
@@ -83,5 +85,3 @@ class parseObject extends parseRestClient{
 		$this->_includes[] = $name;
 	}
 }
-
-?>

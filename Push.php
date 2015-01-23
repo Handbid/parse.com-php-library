@@ -1,6 +1,8 @@
 <?php
 
-class parsePush extends parseRestClient{
+namespace Parse;
+
+class Push extends Client{
 
 	public $channels;
 	public $channel;
@@ -89,5 +91,3 @@ class parsePush extends parseRestClient{
 		}
 	}
 }
-
-?>

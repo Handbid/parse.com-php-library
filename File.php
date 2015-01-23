@@ -1,6 +1,9 @@
 <?php
 
-class parseFile extends parseRestClient{
+namespace Parse;
+
+
+class File extends Client{
 
 	private $_fileName;
 	private $_contentType;
@@ -45,5 +48,3 @@ class parseFile extends parseRestClient{
 
 
 }
-
-?>

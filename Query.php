@@ -1,6 +1,8 @@
 <?php
 
-class parseQuery extends parseRestClient{
+namespace Parse;
+
+class Query extends ßClient{
 	private $_limit = 100;
 	private $_skip = 0;
 	private $_count = 0;
@@ -317,5 +319,3 @@ class parseQuery extends parseRestClient{
 		
 	}
 }
-
-?>
